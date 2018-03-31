@@ -3,13 +3,13 @@
 * Plugin Name: Fast Video and Image Display
 * Plugin URI: https://www.linkedin.com/in/sam-perrow-53782b10b?trk=hp-identity-name
 * Description: Cut seconds off your load time by deferring the loading of YouTube videos and images, which scale automatically for mobile devices.
-* Version: 2.4.5
+* Version: 2.5.0
 * Author: Sam Perrow
 * Author URI: https://www.linkedin.com/in/sam-perrow-53782b10b?trk=hp-identity-name
 * License: GPL2
-* last edited Nov 16, 2017
+* last edited March 31, 2018
 *
-* Copyright 2016  Sam Perrow  (email : sam.perrow399@gmail.com)
+* Copyright 2018  Sam Perrow  (email : sam.perrow399@gmail.com)
 *
 *   This program is free software; you can redistribute it and/or modify
 *   it under the terms of the GNU General Public License as published by
