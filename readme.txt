@@ -3,7 +3,7 @@ Contributors: Sam Perrow
 Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=PMdwpV-0mzP8aloKEF8VGrQ6uiNwwXP7vzkFyjm_p9X7NqGMgkF1lYzxN7G&dispatch=5885d80a13c0db1f8e263663d3faee8dcce3e160f5b9538489e17951d2c62172
 Tags: youtube videos, video, image, page speed, media display, web performance, shortcode, widget, web perf, web speed
 Requires at least: 4.3
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: 4.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -60,8 +60,12 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 
 == Changelog ==
 
-1. Most recent update: June 11, 2017.
-2. Version 2.4.4
+1. Most recent update: Nov 16, 2017.
+2. Version 2.4.5
+
+Nov 16, 2017:
+1) tested compat with WP 4.9.
+
 
 June 11: 1) tested compat with wp 4.8
 
