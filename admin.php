@@ -39,18 +39,54 @@ require_once GKT_VIDEO_IMAGE_PLUGIN_DIR . '/shortcode-videos.php';
 // load modal CSS and admin js
 add_action('wp_enqueue_media', 'gkt_load_admin_stuff');
 function gkt_load_admin_stuff() {
-	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . 'styles.css');
-	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'gkt-media-button.js', array('jquery'), '1.0', true);
+	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . '/css/styles.css');
+	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/gkt-media-button.js', array('jquery'), '1.0', true);
 
 	wp_enqueue_style( 'gkt_formTable_stylesheet');
 	wp_enqueue_script('gkt_media_button');
 }
 
 
-add_action('wp_head', 'gktvi_check_jquery', 10, 0);
-function gktvi_check_jquery() {
+add_action( 'wp_enqueue_scripts', 'gktvi_load_js_css' );
+function gktvi_load_js_css() {
+	wp_enqueue_style( 'gktviVideoCss', plugin_dir_url(__FILE__) . 'css/videos.css');
+
+	// wp_add_inline_style( 'gktviVideoCss', $css );
+}
+
+
+add_action('wp_head', 'gktvi_load_video', 10, 0);
+function gktvi_load_video() {
 	?>
-	<script>if (typeof jQuery == 'undefined' || (!window.jQuery)) {var script = document.createElement('script');script.src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js';document.getElementsByTagName('head')[0].appendChild(script);}</script>
+	<script>
+		function gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
+			var divElem = document.getElementById('div_' + videoID);
+			var svg = document.getElementById('svg_' + videoID);
+
+			var videoThumb = document.createElement('img');
+				videoThumb.src = videoThumbSrc;
+				videoThumb.id = 'img_' + videoID;
+				videoThumb.className = 'gktviVideoThumb ' + videoClass;
+				videoThumb.style.maxHeight = height + 'px';
+				divElem.appendChild(videoThumb);
+
+
+			var iframe = document.createElement('iframe');
+				iframe.src = videoSrc;
+				iframe.id = 'iframe_' + videoID;
+				iframe.style.width = width + 'px';
+				iframe.style.height = height + 'px';
+				iframe.className = 'gktviIframe ' + videoClass;
+				iframe.setAttribute('allowfullscreen', true);
+			
+			[svg, videoThumb].forEach(function(elem) {
+				elem.addEventListener('click', function() {
+					videoThumb.replaceWith(iframe);
+					svg.style.display = 'none';
+				});
+			});
+		}
+	</script>
 	<?php
 }
 
