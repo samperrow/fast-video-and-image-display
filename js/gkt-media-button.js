@@ -12,12 +12,13 @@ function open_media_window() {
 			button: {text: 'Insert Image'}
 		});
 
-	this.window.on('select', function() {
-			var newImage = this.window.state().get('selection').first().toJSON();
-			wp.media.editor.insert('[gkt_image_sc' + ' src="' + newImage.url + '"' + ' mobile-friendly="yes"' + ' id="deferImage_' + newImage.id + '"' + ' class=""' + ' width="' + newImage.width + '"' + ' height="' + newImage.height + '"' + ' alt="' + newImage.alt + '"' + ' title="' + newImage.title +'"]');
+	var self = this;
+	self.window.on('select', function() {
+			var newImage = self.window.state().get('selection').first().toJSON();
+			wp.media.editor.insert('<div id="div_' + newImage.id + '"></div>[gkt_image_sc' + ' src="' + newImage.url + '"' + ' mobile-friendly="yes"' + ' id="' + newImage.id + '"' + ' class=""' + ' width="' + newImage.width + '"' + ' height="' + newImage.height + '"' + ' alt="' + newImage.alt + '"' + ' title="' + newImage.title +'"]');
 		});
 	}
-	this.window.open();
+	self.window.open();
 	return false;
 }
 

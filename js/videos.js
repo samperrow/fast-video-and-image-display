@@ -1,3 +1,4 @@
+// video js below
 function gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
     var divElem = document.getElementById('div_' + videoID);
     var svg = document.getElementById('svg_' + videoID);
@@ -27,4 +28,20 @@ function replaceThumbWithVideo(iframe, videoThumb) {
     iframe.style.width = videoThumb.offsetWidth + 'px';
     iframe.style.height = videoThumb.offsetHeight + 'px';
     videoThumb.replaceWith(iframe);		
+}
+
+
+// js used for images
+function loadDeferredImage( imageID, imageSrc, imageClass, imageAlt, imageTitle, imageWidth, imageHeight ) {
+    var oldDiv = document.getElementById('div_' + imageID);
+    var newImage = document.createElement('img');
+        newImage.id = imageID;
+        newImage.src = imageSrc;
+        newImage.class = imageClass;
+        newImage.alt = imageAlt;
+        newImage.title = imageTitle;
+        newImage.width = imageWidth;
+        newImage.height = imageHeight;
+
+    oldDiv.replaceWith(newImage);
 }

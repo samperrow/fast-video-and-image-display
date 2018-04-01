@@ -1,0 +1,26 @@
+div#TB_window {
+	position: absolute;
+	top: 12.5% !important;
+	left: 50% !important;
+	right: 50% !important;
+	max-width: 650px;
+	max-height: 550px;
+	overflow: hidden;
+}
+
+div#TB_ajaxContent {
+	max-width: 95% !important;
+	height: 100% !important;
+}
+
+.gkt-form-table {
+    position: relative;
+    width: 600px;
+    height: 450px;
+}
+
+#gkt-yt-submit-btn {
+	display: block;
+	margin: 0 auto;
+	width: 125px;
+}
