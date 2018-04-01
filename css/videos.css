@@ -48,7 +48,6 @@ svg.yt-svg {
         height: auto !important;
         max-height: inherit;
         margin: 0 auto; 
-        
     }
 
     img.gktviVideoThumb {
@@ -59,9 +58,7 @@ svg.yt-svg {
     }
 
     iframe.gktviIframe {
-        max-width: 80%;
         display: block;
-
         height: inherit;
     }
 

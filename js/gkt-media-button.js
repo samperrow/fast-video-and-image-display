@@ -12,7 +12,6 @@ function open_media_window() {
 			button: {text: 'Insert Image'}
 		});
 
-	// var self = this;
 	this.window.on('select', function() {
 			var newImage = this.window.state().get('selection').first().toJSON();
 			wp.media.editor.insert('[gkt_image_sc' + ' src="' + newImage.url + '"' + ' mobile-friendly="yes"' + ' id="deferImage_' + newImage.id + '"' + ' class=""' + ' width="' + newImage.width + '"' + ' height="' + newImage.height + '"' + ' alt="' + newImage.alt + '"' + ' title="' + newImage.title +'"]');
@@ -25,7 +24,7 @@ function open_media_window() {
 function sanitizeStr(str) {
 	var regex = /[\[\]\{\}\<\>\'\"\\(\)\*\+\\^\$\|]/g;
 	if (str.match(regex)) {
-		return str.replace(regex, 'asdf');
+		return str.replace(regex, '');
 	}
 }
 
@@ -52,11 +51,11 @@ jQuery(document).ready(function($){
 					ytVideoHeight = '315';
 				}
 
-				// for (var i = 0; i < inputFields.length; i++) {
-				// 	sanitizeStr(inputFields[i].value);
-				// }
+				for (var i = 0; i < inputFields.length; i++) {
+					sanitizeStr(inputFields[i].value);
+				}
 
-			wp.media.editor.insert('[gktvideosc youtube-url="' + youtubeUrl + '" width="' + ytVideoWidth + '" height="' + ytVideoHeight + '" thumbnail-resolution="' + ytVideoRes + '" mobile-friendly="' + ytMobileYesNo + '" class="' + ytVideoClass + '"]');
+				wp.media.editor.insert('[gktvideosc youtube-url="' + youtubeUrl + '" width="' + ytVideoWidth + '" height="' + ytVideoHeight + '" thumbnail-resolution="' + ytVideoRes + '" mobile-friendly="' + ytMobileYesNo + '" class="' + ytVideoClass + '"]');
 			});
 		}
 	});
