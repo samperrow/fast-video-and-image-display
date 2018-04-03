@@ -11,8 +11,8 @@ function gktviCreateElement( type, elemID, elemSrc, elemClass, width, height, al
         elem.className = elemClass;
         elem.style.width = width + 'px';
         elem.style.height = height + 'px';
-        elem.alt = alt ? alt : '';
-        elem.title = title ? title : '';
+        if (alt) elem.alt = alt;
+        if (title) elem.title = title;
     return elem;
 }
 
