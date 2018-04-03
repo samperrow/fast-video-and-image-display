@@ -23,7 +23,7 @@
 *
 *   You should have received a copy of the GNU General Public License
 *   along with this program; if not, write to the Free Software
- *   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 // prevent direct file access
@@ -39,9 +39,6 @@ if ( is_admin() ) {
 	require_once GKTVI_PLUGIN_DIR . '/class-gktvi-media-buttons.php';
 } else {
 	require_once GKTVI_PLUGIN_DIR . '/class-gktvi-create-shortcodes.php';
-
-	// require_once GKT_VIDEO_IMAGE_PLUGIN_DIR . '/shortcode-images.php';
-	// require_once GKT_VIDEO_IMAGE_PLUGIN_DIR . '/shortcode-videos.php';
 }
 
 
@@ -58,7 +55,7 @@ function gktvi_set_admin_links( $links ) {
 add_action('wp_enqueue_media', 'gkt_load_admin_stuff');
 function gkt_load_admin_stuff() {
 	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . '/css/admin.css');
-	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/gkt-media-button.js', array('jquery'), '1.0', true);
+	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/media-button.js', array('jquery'), '1.0', true);
 
 	wp_enqueue_style( 'gkt_formTable_stylesheet');
 	wp_enqueue_script('gkt_media_button');

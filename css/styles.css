@@ -47,9 +47,9 @@ svg.yt-svg {
 }
 
 
-
+/* mobile stuff below */
 @media only screen and ( max-width: 1180px ) {
-    div.gktviDiv {
+    div.gktviDiv.mobile {
         width: inherit;
         max-width: 80% !important;
         height: auto !important;
@@ -57,16 +57,26 @@ svg.yt-svg {
         margin: 0 auto; 
     }
 
-    img.gktviVideoThumb {
+    div.gktviDiv.mobile > img {
         width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
     }
 
-    iframe.gktviIframe {
+    div.gktviDiv.mobile > iframe {
         display: block;
         height: inherit;
     }
 
+}
+
+/* image shortcode mobile CSS below  */
+@media only screen and (max-width: 1180px) {
+    img.gktviImage.mobile {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }

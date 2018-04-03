@@ -80,8 +80,8 @@ class GKTVI_Media_Buttons {
                         </td>
                         <td>
                             <select id="gkt-video-mobile" class="gktvi-element">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                                <option value="yes">yes</option>
+                                <option value="no">no</option>
                             </select>
                         </td>
                     </tr>
