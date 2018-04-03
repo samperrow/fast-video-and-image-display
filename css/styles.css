@@ -1,0 +1,82 @@
+div.gktviDiv {
+    position: relative;
+}
+
+div.gktviDiv img { 
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+}
+
+iframe.gktviIframe {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+div.gktviDiv > img:hover,
+svg.yt-svg:hover {
+    cursor: pointer;
+}
+
+path.outer-button {
+    fill: #1f1f1e;
+    fill-opacity: 0.81;
+}
+
+path.outer-button:hover {
+    cursor: pointer;
+    fill: #cc181e;
+    fill-opacity: 1.0;
+}
+
+svg.yt-svg {
+    position: absolute;
+    display: block;
+    font: 13.3333px Arial;
+    z-index: 1000;
+    background-color: inherit;
+    border: 0;
+    width: 15%;
+    height: 15%;
+    left: 42.5%;
+    right: 42.5%;
+    top: 42.5%;
+    bottom: 42.5%;
+}
+
+
+/* mobile stuff below */
+@media only screen and ( max-width: 1180px ) {
+    div.gktviDiv.mobile {
+        width: inherit;
+        max-width: 80% !important;
+        height: auto !important;
+        max-height: inherit;
+        margin: 0 auto; 
+    }
+
+    div.gktviDiv.mobile > img {
+        width: 100%;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    div.gktviDiv.mobile > iframe {
+        display: block;
+        height: inherit;
+    }
+
+}
+
+/* image shortcode mobile CSS below  */
+@media only screen and (max-width: 1180px) {
+    img.gktviImage.mobile {
+        width: 80%;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
+    }
+}

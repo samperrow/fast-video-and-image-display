@@ -1,10 +1,11 @@
 === Fast Video and Image Display ===
-Contributors: Sam Perrow
-Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=PMdwpV-0mzP8aloKEF8VGrQ6uiNwwXP7vzkFyjm_p9X7NqGMgkF1lYzxN7G&dispatch=5885d80a13c0db1f8e263663d3faee8dcce3e160f5b9538489e17951d2c62172
+Contributors: samperrow
+Donate link: https://www.paypal.me/samperrow
 Tags: youtube videos, video, image, page speed, media display, web performance, shortcode, widget, web perf, web speed
 Requires at least: 4.3
-Tested up to: 4.9
-Stable tag: 4.4.2
+Tested up to: 4.9.5
+Stable tag: 2.5.0
+Requires PHP: 5.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +16,7 @@ Cut seconds off your load time by deferring the loading of YouTube videos and im
 Showcasing YouTube videos and images on websites is a great way to draw visitor's attention, however doing so can easily add several seconds to a website's load time. This is bad for user experience, scares away potential customers, and hurts search rankings.
 
 This plugin allows users to upload YouTube videos and images while having zero impact on page load time, easily cutting load time by several seconds.
+
 
 == Installation ==
 
@@ -42,7 +44,7 @@ Image Shortcode:
 I hope you enjoy this plugin and find it will easily and dramatically improve page load time for your website. If you have questions, would like to see more features added on, don't hesitate to send me an email or message me on the forums. Without your input this plugin cannot be improved!
 
 
-1. [Support Forum](http://wordpress.org/support/plugin/fast-video-and-image-display)
+1. [Support Forum](https://wordpress.org/support/plugin/fast-video-and-image-display)
 2. Send me an email at sam.perrow399@gmail.com
 
 
@@ -60,8 +62,13 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 
 == Changelog ==
 
-1. Most recent update: Nov 16, 2017.
-2. Version 2.4.5
+1. Most recent update: April 3, 2018.
+2. Version 2.5.0
+
+April 3, 2018:
+1) vastly improved quality of code and architecture of plugin.
+2) removed jquery as a dependency
+3) minimized amount of CSS needed.
 
 Nov 16, 2017:
 1) tested compat with WP 4.9.
