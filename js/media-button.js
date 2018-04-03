@@ -15,7 +15,7 @@ function open_media_window() {
 	var self = this;
 	self.window.on('select', function() {
 			var newImage = self.window.state().get('selection').first().toJSON();
-			wp.media.editor.insert('[gktImageShortcode' + ' src="' + newImage.url + '"' + ' mobile-friendly="yes"' + ' id="' + newImage.id + '"' + ' class=""' + ' width="' + newImage.width + '"' + ' height="' + newImage.height + '"' + ' alt="' + newImage.alt + '"' + ' title="' + newImage.title +'"]');
+			wp.media.editor.insert('[gkt_sc_images' + ' src="' + newImage.url + '"' + ' mobile-friendly="yes"' + ' id="' + newImage.id + '"' + ' class=""' + ' width="' + newImage.width + '"' + ' height="' + newImage.height + '"' + ' alt="' + newImage.alt + '"' + ' title="' + newImage.title +'"]');
 		});
 	}
 	self.window.open();
@@ -56,7 +56,7 @@ jQuery(document).ready(function($){
 					inputFields[i].value = sanitizeStr(inputFields[i].value);
 				}
 
-				wp.media.editor.insert('[gktVideoShortcode youtube-url="' + youtubeUrl + ' width="' + ytVideoWidth + '" height="' + ytVideoHeight + '" thumbnail-resolution="' + ytVideoRes + '" mobile-friendly="' + ytMobileYesNo + '" class="' + ytVideoClass + '"]');
+				wp.media.editor.insert('[gktvideosc youtube-url="' + youtubeUrl + '" width="' + ytVideoWidth + '" height="' + ytVideoHeight + '" thumbnail-resolution="' + ytVideoRes + '" mobile-friendly="' + ytMobileYesNo + '" class="' + ytVideoClass + '"]');
 			});
 		}
 	});

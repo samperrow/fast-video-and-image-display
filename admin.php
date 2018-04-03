@@ -54,8 +54,16 @@ function gktvi_set_admin_links( $links ) {
 // load modal CSS and admin js
 add_action('wp_enqueue_media', 'gkt_load_admin_stuff');
 function gkt_load_admin_stuff() {
-	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . '/css/admin.css');
-	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/media-button.js', array('jquery'), '1.0', true);
+	// $css_path = plugin_dir_url(__FILE__) . 'css/admin.css';  
+	$css_path = GKTVI_PLUGIN_DIR . '/css/admin.css';
+	$css_last_mod = ( !empty(filemtime($css_path))) ? filemtime($css_path) : time();
+
+	// $js_path = plugin_dir_url(__FILE__) . 'css/admin.css';
+	$js_path = GKTVI_PLUGIN_DIR . '/js/media-button.js';
+	$js_last_mod = ( ! empty(filemtime($js_path) ) ) ? filemtime($js_path) : time();
+
+	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . 'css/admin.css', null, $css_last_mod );
+	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/media-button.js', array('jquery'), $js_last_mod, true);
 
 	wp_enqueue_style( 'gkt_formTable_stylesheet');
 	wp_enqueue_script('gkt_media_button');
@@ -64,8 +72,16 @@ function gkt_load_admin_stuff() {
 
 add_action('wp_enqueue_scripts', 'gktvi_load_js_css');
 function gktvi_load_js_css() {
-	wp_register_style( 'gktvi_styles', plugin_dir_url(__FILE__) . '/css/styles.css');
-	wp_register_script( 'gktvi_js', plugin_dir_url(__FILE__) . 'js/execute-shortcodes.js', null, null, false);
+	// $css_path = plugin_dir_url(__FILE__) . 'css/admin.css';  
+	$css_path = GKTVI_PLUGIN_DIR . '/css/styles.css';
+	$css_last_mod = filemtime($css_path) ? filemtime($css_path) : time();
+
+	// $js_path = plugin_dir_url(__FILE__) . 'js/execute-shortcode.js'';
+	$js_path = GKTVI_PLUGIN_DIR . '/js/execute-shortcodes.js';
+	$js_last_mod = filemtime($js_path) ? filemtime($js_path) : time();
+
+	wp_register_style( 'gktvi_styles', plugin_dir_url(__FILE__) . 'css/styles.css', null, $css_last_mod );
+	wp_register_script( 'gktvi_js', plugin_dir_url(__FILE__) . 'js/execute-shortcodes.js', null, $js_last_mod, false);
 
 	wp_enqueue_style( 'gktvi_styles');
 	wp_enqueue_script( 'gktvi_js' );

@@ -7,8 +7,8 @@ if ( !defined ( 'ABSPATH' ) ) {
 class GKTVI_Create_Shortcodes {
 
 	public function __construct() {
-		add_shortcode( 'gktImageShortcode', array( $this, 'create_image_shortcode' ) );
-		add_shortcode( 'gktVideoShortcode', array( $this, 'create_video_shortcode' ) );
+		add_shortcode( 'gkt_sc_images', array( $this, 'create_image_shortcode' ) );
+		add_shortcode( 'gktvideosc', array( $this, 'create_video_shortcode' ) );
 	}
 
 	public function create_video_shortcode( $atts ) {

@@ -43,7 +43,7 @@ function replaceThumbWithVideo(iframe, videoThumb) {
 }
 
 
-// js used for images
+// image js
 function loadDeferredImage( imageID, imageSrc, imageClass, imageAlt, imageTitle, imageWidth, imageHeight ) {
     var oldDiv = document.getElementById('div_' + imageID);
     var newImage = gktviCreateElement('img', imageID, imageSrc, imageClass, imageWidth, imageHeight, imageAlt, imageTitle);

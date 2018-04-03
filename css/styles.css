@@ -59,7 +59,7 @@ svg.yt-svg {
 
     div.gktviDiv.mobile > img {
         width: 100%;
-        height: auto;
+        height: auto !important;
         display: block;
         margin: 0 auto;
     }
@@ -75,8 +75,10 @@ svg.yt-svg {
 @media only screen and (max-width: 1180px) {
     img.gktviImage.mobile {
         width: 80%;
-        height: auto;
+        height: auto !important;
         display: block;
         margin: 0 auto;
     }
 }
+
+/*  */
