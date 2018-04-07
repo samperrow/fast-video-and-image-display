@@ -49,8 +49,8 @@ function gktvi_set_admin_links( $links ) {
 // load modal CSS and admin js
 add_action('wp_enqueue_media', 'gkt_load_admin_stuff');
 function gkt_load_admin_stuff() {
-	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . 'css/admin.css', null, '2.5.0' );
-	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/media-button.js', array('jquery'), '2.5.0', true);
+	wp_register_style( 'gkt_formTable_stylesheet', plugin_dir_url(__FILE__) . 'css/admin.css', null, '2.5.1' );
+	wp_register_script( 'gkt_media_button', plugin_dir_url(__FILE__) . 'js/media-button.js', array('jquery'), '2.5.1', true);
 
 	wp_enqueue_style( 'gkt_formTable_stylesheet');
 	wp_enqueue_script('gkt_media_button');
@@ -60,7 +60,7 @@ function gkt_load_admin_stuff() {
 // the two functions below can be switched on or off depending on user preferences. gktvi_load_cssJS_requests() loads the css/js as requests, gktvi_load_cssJS_inline() loads them minified inline.
 // add_action('wp_enqueue_scripts', 'gktvi_load_cssJS_requests');
 function gktvi_load_cssJS_requests() {
-	wp_register_style( 'gktvi_styles', plugin_dir_url(__FILE__) . 'css/styles.css', null, '2.5.0' );
+	wp_register_style( 'gktvi_styles', plugin_dir_url(__FILE__) . 'css/styles.css', null, '2.5.1' );
 	wp_register_script( 'gktvi_js', plugin_dir_url(__FILE__) . 'js/execute-shortcodes.js', null, '2.5.1', false);
 
 	wp_enqueue_style( 'gktvi_styles');
