@@ -21,26 +21,25 @@ function gktviCreateElement( type, elemID, elemSrc, elemClass, width, height, al
 function gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
     var divElem = document.getElementById('div_' + videoID);
     var svg = document.getElementById('svg_' + videoID);
+
     var videoThumb = gktviCreateElement('img', videoID, videoThumbSrc, videoClass, width, height);
-    var elemArr = [svg, videoThumb];
     divElem.appendChild(videoThumb);
 
     var iframe = gktviCreateElement('iframe', videoID, videoSrc, videoClass, width, height);
         iframe.setAttribute('allowfullscreen', true);
 
-
-    for (var i = 0; i < elemArr.length; i++) {
-        window.addEventListener
-            ? elemArr[i].addEventListener('click', replaceThumbWithVideo(iframe, videoThumb, svg)) 
-            : elemArr[i].attachEvent('onclick', replaceThumbWithVideo(iframe, videoThumb, svg)) 
-    }
+    [svg, videoThumb].forEach(function(elem) {
+        window.addEventListener 
+        ? elem.addEventListener('click', replaceThumbWithVideo(iframe, videoThumb, svg)) 
+        : elem.attachEvent('onclick', replaceThumbWithVideo(iframe, videoThumb, svg));
+    });
 }
 
 function replaceThumbWithVideo(iframe, videoThumb, svg) {
     return function() {
         iframe.style.width = videoThumb.offsetWidth + 'px';
         iframe.style.height = videoThumb.offsetHeight + 'px';
-        videoThumb.parentNode.replaceChild(iframe, videoThumb);
+        videoThumb.replaceWith(iframe);
         svg.style.display = 'none';
     }
 }
@@ -50,5 +49,5 @@ function replaceThumbWithVideo(iframe, videoThumb, svg) {
 function loadDeferredImage( imageID, imageSrc, imageClass, imageAlt, imageTitle, imageWidth, imageHeight ) {
     var oldDiv = document.getElementById('div_' + imageID);
     var newImage = gktviCreateElement('img', imageID, imageSrc, imageClass, imageWidth, imageHeight, imageAlt, imageTitle);
-    oldDiv.parentNode.replaceChild(newImage, oldDiv);
+    oldDiv.replaceWith(newImage);
 }
