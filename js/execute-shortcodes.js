@@ -3,7 +3,7 @@ function gktviChangeSVG(elem, fill, opacity) {
     elem.style.fillOpacity = opacity;
 }
 
-// generic element creation js below
+// generic element creation js
 function gktviCreateElement( type, elemID, elemSrc, elemClass, width, height, alt, title ) {
     var elem = document.createElement(type);
         elem.id = type + '_' + elemID;
@@ -29,17 +29,19 @@ function gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, he
         iframe.setAttribute('allowfullscreen', true);
 
     [svg, videoThumb].forEach(function(elem) {
-        elem.addEventListener('click', function() {
-            replaceThumbWithVideo(iframe, videoThumb);
-            svg.style.display = 'none';
-        });
+        window.addEventListener 
+        ? elem.addEventListener('click', replaceThumbWithVideo(iframe, videoThumb, svg)) 
+        : elem.attachEvent('onclick', replaceThumbWithVideo(iframe, videoThumb, svg));
     });
 }
 
-function replaceThumbWithVideo(iframe, videoThumb) {
-    iframe.style.width = videoThumb.offsetWidth + 'px';
-    iframe.style.height = videoThumb.offsetHeight + 'px';
-    videoThumb.replaceWith(iframe);		
+function replaceThumbWithVideo(iframe, videoThumb, svg) {
+    return function() {
+        iframe.style.width = videoThumb.offsetWidth + 'px';
+        iframe.style.height = videoThumb.offsetHeight + 'px';
+        videoThumb.replaceWith(iframe);
+        svg.style.display = 'none';
+    }
 }
 
 

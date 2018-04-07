@@ -63,7 +63,7 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 == Changelog ==
 
 1. Most recent update: April 3, 2018.
-2. Version 2.5.0
+2. Version 2.5.0.1
 
 April 3, 2018:
 1) vastly improved quality of code and architecture of plugin.
