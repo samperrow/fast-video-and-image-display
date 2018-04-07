@@ -62,8 +62,11 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 
 == Changelog ==
 
-1. Most recent update: April 3, 2018.
-2. Version 2.5.0.1
+1. Most recent update: April 6, 2018.
+2. Version 2.5.1
+
+April 6, 2018:
+1) added video compatibility for IE8
 
 April 3, 2018:
 1) vastly improved quality of code and architecture of plugin.

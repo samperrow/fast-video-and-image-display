@@ -3,7 +3,7 @@
 * Plugin Name: Fast Video and Image Display
 * Plugin URI: https://wordpress.org/plugins/fast-video-and-image-display/
 * Description: Cut seconds off your load time by deferring the loading of YouTube videos and images, which scale automatically for mobile devices.
-* Version: 2.5.0.1
+* Version: 2.5.1
 * Author: Sam Perrow
 * Author URI: https://www.linkedin.com/in/sam-perrow
 * License: GPL2
@@ -40,7 +40,7 @@ require_once is_admin() ? GKTVI_PLUGIN_DIR . '/class-gktvi-media-buttons.php' : 
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'gktvi_set_admin_links' );
 function gktvi_set_admin_links( $links ) {
 	$gktvi_links = array(
-		'<a href="https://github.com/sarcastasaur/fast-video-and-image-display">View on GitHub</a>',
+		'<a href="https://github.com/samperrow/fast-video-and-image-display">View on GitHub</a>',
 		'<a href="https://www.paypal.me/samperrow">Donate</a>' );
 	return array_merge( $links, $gktvi_links );
 }
