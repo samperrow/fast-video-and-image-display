@@ -28,20 +28,18 @@ function gktviTriggerVideos( videoID, videoThumbSrc, videoClass, videoSrc, width
 }
 
 function gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
-    return function() {
-        var divElem = document.getElementById('div_' + videoID);
-        var svg = document.getElementById('svg_' + videoID);
-        var videoThumb = gktviCreateElement('img', videoID, videoThumbSrc, videoClass, width, height);
-        var elemArr = [svg, videoThumb];
-        divElem.appendChild(videoThumb);
+      var divElem = document.getElementById('div_' + videoID);
+      var svg = document.getElementById('svg_' + videoID);
+      var videoThumb = gktviCreateElement('img', videoID, videoThumbSrc, videoClass, width, height);
+      var elemArr = [svg, videoThumb];
+      divElem.appendChild(videoThumb);
 
-        var iframe = gktviCreateElement('iframe', videoID, videoSrc, videoClass, width, height);
-            iframe.setAttribute('allowfullscreen', true);
+      var iframe = gktviCreateElement('iframe', videoID, videoSrc, videoClass, width, height);
+          iframe.setAttribute('allowfullscreen', true);
 
-        for (var i = 0; i < elemArr.length; i++) {
-            gktviTriggerEvent( elemArr[i], 'click', 'onclick', replaceThumbWithVideo(iframe, videoThumb, svg));
-        }
-    }
+      for (var i = 0; i < elemArr.length; i++) {
+          gktviTriggerEvent( elemArr[i], 'click', 'onclick', replaceThumbWithVideo(iframe, videoThumb, svg));
+      }
 }
 
 function replaceThumbWithVideo(iframe, videoThumb, svg) {
