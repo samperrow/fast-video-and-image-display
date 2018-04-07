@@ -74,5 +74,5 @@ function gktvi_load_cssJS_inline() { ?>
 	<script type='text/javascript'>function gktviChangeSVG(e,t,i){e.style.fill=t,e.style.fillOpacity=i}function gktviCreateElement(e,t,i,n,l,a,d,c){var r=document.createElement(e);return r.id=e+"_"+t,r.src=i,r.className=n,r.style.width=l+"px",r.style.height=a+"px",d&&(r.alt=d),c&&(r.title=c),r}function gktviLoadVideo(e,t,i,n,l,a){var d=document.getElementById("div_"+e),c=document.getElementById("svg_"+e),r=gktviCreateElement("img",e,t,i,l,a);d.appendChild(r);var o=gktviCreateElement("iframe",e,n,i,l,a);o.setAttribute("allowfullscreen",!0),[c,r].forEach(function(e){window.addEventListener?e.addEventListener("click",replaceThumbWithVideo(o,r,c)):e.attachEvent("onclick",replaceThumbWithVideo(o,r,c))})}function replaceThumbWithVideo(e,t,i){return function(){e.style.width=t.offsetWidth+"px",e.style.height=t.offsetHeight+"px",t.replaceWith(e),i.style.display="none"}}function loadDeferredImage(e,t,i,n,l,a,d){var c=document.getElementById("div_"+e),r=gktviCreateElement("img",e,t,i,a,d,n,l);c.replaceWith(r)}</script>
 	<?php
 }
-
+//
 ?>
