@@ -75,5 +75,5 @@ function gktvi_load_cssJS_inline() { ?>
 
 	<?php
 }
-
+//
 ?>
