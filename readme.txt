@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/samperrow
 Tags: youtube videos, video, image, page speed, media display, web performance, shortcode, widget, web perf, web speed
 Requires at least: 4.3
 Tested up to: 4.9.5
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 Requires PHP: 5.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,11 +62,11 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 
 == Changelog ==
 
-1. Most recent update: April 6, 2018.
+1. Most recent update: April 7, 2018.
 2. Version 2.5.1
 
-April 6, 2018:
-1) added video compatibility for IE8
+April 7, 2018:
+1) improved cross browser compatibility (IE) 
 
 April 3, 2018:
 1) vastly improved quality of code and architecture of plugin.
