@@ -1,8 +1,3 @@
-function gktviChangeSVG(elem, fill, opacity) {
-    elem.style.fill = fill;
-    elem.style.fillOpacity = opacity;
-}
-
 // generic element creation js
 function gktviCreateElement( type, elemID, elemSrc, elemClass, width, height, alt, title ) {
     var elem = document.createElement(type);
@@ -16,23 +11,35 @@ function gktviCreateElement( type, elemID, elemSrc, elemClass, width, height, al
     return elem;
 }
 
+// video js
+function gktviChangeSVG(elem, fill, opacity) {
+    elem.style.fill = fill;
+    elem.style.fillOpacity = opacity;
+}
 
-// video js 
+function gktviTriggerEvent( elem, mainEvent, backupEvent, callback ) {
+    window.addEventListener
+        ? elem.addEventListener(mainEvent, callback)
+        : elem.attachEvent(backupEvent, callback);
+}
+
+function gktviTriggerVideos( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
+    gktviTriggerEvent( document, 'DOMContentLoaded', 'onreadystatechange', gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, height )); 
+}
+
 function gktviLoadVideo( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
-    var divElem = document.getElementById('div_' + videoID);
-    var svg = document.getElementById('svg_' + videoID);
-    var videoThumb = gktviCreateElement('img', videoID, videoThumbSrc, videoClass, width, height);
-    var elemArr = [svg, videoThumb];
-    divElem.appendChild(videoThumb);
+      var divElem = document.getElementById('div_' + videoID);
+      var svg = document.getElementById('svg_' + videoID);
+      var videoThumb = gktviCreateElement('img', videoID, videoThumbSrc, videoClass, width, height);
+      var elemArr = [svg, videoThumb];
+      divElem.appendChild(videoThumb);
 
-    var iframe = gktviCreateElement('iframe', videoID, videoSrc, videoClass, width, height);
-        iframe.setAttribute('allowfullscreen', true);
+      var iframe = gktviCreateElement('iframe', videoID, videoSrc, videoClass, width, height);
+          iframe.setAttribute('allowfullscreen', true);
 
-    for (var i = 0; i < elemArr.length; i++) {
-        window.addEventListener
-            ? elemArr[i].addEventListener('click', replaceThumbWithVideo(iframe, videoThumb, svg)) 
-            : elemArr[i].attachEvent('onclick', replaceThumbWithVideo(iframe, videoThumb, svg)) 
-    }
+      for (var i = 0; i < elemArr.length; i++) {
+          gktviTriggerEvent( elemArr[i], 'click', 'onclick', replaceThumbWithVideo(iframe, videoThumb, svg));
+      }
 }
 
 function replaceThumbWithVideo(iframe, videoThumb, svg) {
@@ -43,7 +50,6 @@ function replaceThumbWithVideo(iframe, videoThumb, svg) {
         svg.style.display = 'none';
     }
 }
-
 
 // image js
 function loadDeferredImage( imageID, imageSrc, imageClass, imageAlt, imageTitle, imageWidth, imageHeight ) {
