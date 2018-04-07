@@ -23,7 +23,7 @@ function open_media_window() {
 }
 
 function sanitizeStr(str) {
-	var regex = /[\[\]\{\}\<\>\'\"\\(\)\*\+\\^\$\|]/g;
+	var regex = /[^\_\-.+!*'();,/?:@=$&\w\s]/g;
 	if (str.match(regex)) {
 		return str.replace(regex, '');
 	}
