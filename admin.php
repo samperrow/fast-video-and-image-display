@@ -58,7 +58,7 @@ function gkt_load_admin_stuff() {
 
 
 // the two functions below can be switched on or off depending on user preferences. gktvi_load_cssJS_requests() loads the css/js as requests, gktvi_load_cssJS_inline() loads them minified inline.
-add_action('wp_enqueue_scripts', 'gktvi_load_cssJS_requests');
+// add_action('wp_enqueue_scripts', 'gktvi_load_cssJS_requests');
 function gktvi_load_cssJS_requests() {
 	wp_register_style( 'gktvi_styles', plugin_dir_url(__FILE__) . 'css/styles.css', null, '2.5.0' );
 	wp_register_script( 'gktvi_js', plugin_dir_url(__FILE__) . 'js/execute-shortcodes.js', null, '2.5.0', false);
@@ -68,11 +68,10 @@ function gktvi_load_cssJS_requests() {
 }	
 
 
-// add_action('wp_head', 'gktvi_load_cssJS_inline', 10, 0);
+add_action('wp_head', 'gktvi_load_cssJS_inline', 10, 0);
 function gktvi_load_cssJS_inline() { ?>
 	<style type='text/css'>div.gktviDiv{position:relative}div.gktviDiv img{width:100%;height:100%;max-height:100%;margin:0}iframe.gktviIframe{width:100%;height:100%;margin:0 auto}div.gktviDiv>img:hover,svg.yt-svg:hover{cursor:pointer}path.outer-button{fill:#1f1f1e;fill-opacity:.81}path.outer-button:hover{cursor:pointer;fill:#cc181e;fill-opacity:1}svg.yt-svg{position:absolute;display:block;font:13.33px Arial;z-index:1000;background-color:inherit;border:0;width:15%;height:15%;left:42.5%;right:42.5%;top:42.5%;bottom:42.5%}@media only screen and (max-width:1180px){div.gktviDiv.mobile{width:inherit;max-width:80%!important;height:auto!important;max-height:inherit;margin:0 auto}div.gktviDiv.mobile>img{width:100%;height:auto!important;display:block;margin:0 auto}div.gktviDiv.mobile>iframe{display:block;height:inherit}img.gktviImage.mobile{width:80%;height:auto!important;display:block;margin:0 auto}}</style>
-	<script type='text/javascript'>function gktviChangeSVG(e,t,i){e.style.fill=t,e.style.fillOpacity=i}function gktviCreateElement(e,t,i,l,n,a,d,c){var r=document.createElement(e);return r.id=e+"_"+t,r.src=i,r.className=l,r.style.width=n+"px",r.style.height=a+"px",d&&(r.alt=d),c&&(r.title=c),r}function gktviLoadVideo(e,t,i,l,n,a){var d=document.getElementById("div_"+e),c=document.getElementById("svg_"+e),r=gktviCreateElement("img",e,t,i,n,a);d.appendChild(r);var o=gktviCreateElement("iframe",e,l,i,n,a);o.setAttribute("allowfullscreen",!0),[c,r].forEach(function(e){e.addEventListener("click",function(){replaceThumbWithVideo(o,r),c.style.display="none"})})}function replaceThumbWithVideo(e,t){e.style.width=t.offsetWidth+"px",e.style.height=t.offsetHeight+"px",t.replaceWith(e)}function loadDeferredImage(e,t,i,l,n,a,d){var c=document.getElementById("div_"+e),r=gktviCreateElement("img",e,t,i,a,d,l,n);c.replaceWith(r)}</script>
-
+	<script type='text/javascript'>function gktviChangeSVG(e,t,i){e.style.fill=t,e.style.fillOpacity=i}function gktviCreateElement(e,t,i,n,l,a,d,c){var r=document.createElement(e);return r.id=e+"_"+t,r.src=i,r.className=n,r.style.width=l+"px",r.style.height=a+"px",d&&(r.alt=d),c&&(r.title=c),r}function gktviLoadVideo(e,t,i,n,l,a){var d=document.getElementById("div_"+e),c=document.getElementById("svg_"+e),r=gktviCreateElement("img",e,t,i,l,a);d.appendChild(r);var o=gktviCreateElement("iframe",e,n,i,l,a);o.setAttribute("allowfullscreen",!0),[c,r].forEach(function(e){window.addEventListener?e.addEventListener("click",replaceThumbWithVideo(o,r,c)):e.attachEvent("onclick",replaceThumbWithVideo(o,r,c))})}function replaceThumbWithVideo(e,t,i){return function(){e.style.width=t.offsetWidth+"px",e.style.height=t.offsetHeight+"px",t.replaceWith(e),i.style.display="none"}}function loadDeferredImage(e,t,i,n,l,a,d){var c=document.getElementById("div_"+e),r=gktviCreateElement("img",e,t,i,a,d,n,l);c.replaceWith(r)}</script>
 	<?php
 }
 
