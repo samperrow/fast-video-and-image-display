@@ -74,7 +74,7 @@ svg.yt-svg {
 /* image shortcode mobile CSS below  */
 @media only screen and (max-width: 1180px) {
     img.gktviImage.mobile {
-        width: 80%;
+        width: 80% !important;
         height: auto !important;
         display: block;
         margin: 0 auto;

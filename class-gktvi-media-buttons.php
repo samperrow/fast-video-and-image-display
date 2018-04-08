@@ -11,7 +11,8 @@ class GKTVI_Media_Buttons {
         add_action( 'media_buttons', array( $this, 'create_video_modal' ), 15, 2 );
     }
 
-    public function create_media_buttons() { 
+    public function create_media_buttons() {
+        add_thickbox();
         ?>
 
         <a href='#' id='gktDeferImage' class='button'>
@@ -26,7 +27,7 @@ class GKTVI_Media_Buttons {
     public function create_video_modal() {
 
         ?>
-        <div class="hidden" id="gktDeferVideo" width="500">
+        <div style="display: none;" id="gktDeferVideo" width="500">
             <table class="gkt-form-table">
                 <tbody>
                     <tr>
@@ -35,7 +36,7 @@ class GKTVI_Media_Buttons {
                         </td>
                         <td>
                             <label>
-                                <input type="text" id="gkt-video-url" class="widefat gktvi-element" />
+                                <input type="text" id="gkt-video-url" class="widefat gktvi-element" value='' />
                             </label>
                             <i>"https://www.youtube.com/watch?v=sGUNPMPrxvA", for example</i>
                         </td>
