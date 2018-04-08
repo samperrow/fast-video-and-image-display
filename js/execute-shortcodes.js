@@ -18,9 +18,13 @@ function gktviChangeSVG(elem, fill, opacity) {
 }
 
 function gktviTriggerEvent( elem, mainEvent, backupEvent, callback ) {
-    window.addEventListener
-        ? elem.addEventListener(mainEvent, callback)
-        : elem.attachEvent(backupEvent, callback);
+    if (window.addEventListener) {
+        elem.addEventListener(mainEvent, callback);
+        elem.addEventListener('touchstart', callback);
+    } else {
+        elem.attachEvent(backupEvent, callback);
+    }
+
 }
 
 function gktviTriggerVideos( videoID, videoThumbSrc, videoClass, videoSrc, width, height ) {
