@@ -27,7 +27,7 @@ path.outer-button {
 
 path.outer-button:hover {
     cursor: pointer;
-    fill: #cc181e;
+    fill: #ff0000;
     fill-opacity: 1.0;
 }
 

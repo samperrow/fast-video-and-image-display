@@ -34,14 +34,13 @@ class GKTVI_Create_Shortcodes {
 				$video_url = 'https://www.youtube.com/embed/' . $video_id . '?autoplay=1&rel=0&autohide=2&border=0&wmode=opaque&enablejsapi=1&playsinline=1&controls=1&showinfo=1';
 				$video_thumbsrc = 'https://i.ytimg.com/vi/' . $video_id . '/' . $video_shortcode['thumbnail-resolution'] . '.jpg';
 				$script = '<script>gktviTriggerVideos("' . $video_id . '", "' . $video_thumbsrc . '", "' . $video_shortcode['class'] . '", "' . $video_url . '", ' . $video_shortcode['width'] . ', ' . $video_shortcode['height'] . ');</script>';
-				
+
 				$svg = '<svg id="svg_' . $video_id . '"' . ' class="yt-svg" version="1.1" viewBox="0 0 68 48">
-							<path class="outer-button" d="m .66,37.62 c 0,0 .66,4.70 2.70,6.77 2.58,2.71 5.98,2.63 7.49,2.91 5.43,.52 23.10,.68 23.12,.68 .00,-1.3e-5 14.29,-0.02 23.81,-0.71 1.32,-0.15 4.22,-0.17 6.81,-2.89 2.03,-2.07 2.70,-6.77 2.70,-6.77 0,0 .67,-5.52 .67,-11.04 l 0,-5.17 c 0,-5.52 -0.67,-11.04 -0.67,-11.04 0,0 -0.66,-4.70 -2.70,-6.77 C 62.03,.86 59.13,.84 57.80,.69 48.28,0 34.00,0 34.00,0 33.97,0 19.69,0 10.18,.69 8.85,.84 5.95,.86 3.36,3.58 1.32,5.65 .66,10.35 .66,10.35 c 0,0 -0.55,4.50 -0.66,9.45 l 0,8.36 c .10,4.94 .66,9.45 .66,9.45 z"></path>
-							<path d="m 26.96,13.67 18.37,9.62 -18.37,9.55 -0.00,-19.17 z" fill="#fff"></path>
-							<path d="M 45.02,23.46 45.32,23.28 26.96,13.67 43.32,24.34 45.02,23.46 z" fill="#ccc"></path>
+							<path class="outer-button" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path>
+							<path d="M 45,24 27,14 27,34" fill="#fff"></path>
 						</svg>';
 
-				$showRedSvgJS = "gktviChangeSVG(this.getElementsByTagName('path')[0], '#cc181e', '1.0')";
+				$showRedSvgJS = "gktviChangeSVG(this.getElementsByTagName('path')[0], '#ff0000', '1.0')";
 				$showNormalSvgJS = "gktviChangeSVG(this.getElementsByTagName('path')[0], '#1f1f1e', '0.81')";
 				$style = 'max-width: ' . $video_shortcode['width'] . 'px; width: ' . $video_shortcode['width'] . 'px; max-height: ' . $video_shortcode['height'] . ' px; height: ' . $video_shortcode['height'] . 'px;';
 	
