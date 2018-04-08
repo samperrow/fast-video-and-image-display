@@ -66,7 +66,9 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 2. Version 2.5.1
 
 April 7, 2018:
-1) improved cross browser compatibility (IE) 
+1) improved cross browser compatibility (YouTube does not support iframe's for IE8 and below. Images work for all browsers)
+2) updated YouTube video play button arrow.
+3) fixed bugs on admin side involving inserting the shortcodes into the media editor.
 
 April 3, 2018:
 1) vastly improved quality of code and architecture of plugin.

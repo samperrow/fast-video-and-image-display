@@ -40,7 +40,7 @@ require_once is_admin() ? GKTVI_PLUGIN_DIR . '/class-gktvi-media-buttons.php' : 
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'gktvi_set_admin_links' );
 function gktvi_set_admin_links( $links ) {
 	$gktvi_links = array(
-		'<a href="https://github.com/sarcastasaur/fast-video-and-image-display">View on GitHub</a>',
+		'<a href="https://github.com/samperrow/fast-video-and-image-display">View on GitHub</a>',
 		'<a href="https://www.paypal.me/samperrow">Donate</a>' );
 	return array_merge( $links, $gktvi_links );
 }
