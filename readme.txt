@@ -50,10 +50,10 @@ I hope you enjoy this plugin and find it will easily and dramatically improve pa
 
 == Screenshots ==
 
-1. screenshot-1.jpg
-2. screenshot-2.jpg
-3. screenshot-3.jpg
-4. screenshot-4.jpg
+1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
 
 == Upgrade Notice ==
 
